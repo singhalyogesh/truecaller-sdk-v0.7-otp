@@ -98,23 +98,29 @@ Using this would ensure that the sdk works normally for API level 16 & above, an
      ```
     
     TrueSDK v0.7 provides you with capabilities to configure the following settings -
-    
-    ##### - Consent Mode 
-	To switch between a full screen view or an overlay view of the profile consent
-	Possible values for Consent Mode :
-	
-	```java
-	TrueSdkScope.SDK_OPTION_WITHOUT_OTP
-	TrueSdkScope.SDK_OPTION_WITH_OTP
-	```
 
     ##### - SDK Options
 	To use the SDK for verification of only Truecaller users or to use it to verify all your users ( including non truecaller users as well )
 	Possible values for SDK Options :
 	
-	```java
+	```java      
+	// SDK with verification capability for only Truecaller users who have the truecaller app present on the device
+	TrueSdkScope.SDK_OPTION_WITH_OTP         
+	
+	// SDK with OTP verification functionality for all users, including non truecaller users ( via OTP verification )
 	TrueSdkScope.SDK_OPTION_WITHOUT_OTP
-	TrueSdkScope.SDK_OPTION_WITH_OTP
+	```
+
+    ##### - Consent Mode 
+	To switch between a full screen view or an overlay view of the profile consent
+	Possible values for Consent Mode :
+	
+	```java
+	// To display the user's Truecaller profile in a popup view
+	TrueSdkScope.CONSENT_MODE_POPUP
+	
+	// To display the user's Truecaller profile in a full screen view
+	TrueSdkScope.CONSENT_MODE_FULLSCREEN
 	```
 	
     ##### - Footer Type
@@ -122,7 +128,10 @@ Using this would ensure that the sdk works normally for API level 16 & above, an
 	Possible values for Footer Type :
 	
 	```java
+	// To use "USE DIFFERENT NUMBER" CTA at the bottom of the user profile view
 	TrueSdkScope.FOOTER_TYPE_CONTINUE
+	
+	// To use "SKIP" CTA at the bottom of the user profile view
 	TrueSdkScope.FOOTER_TYPE_SKIP
 	```
 	
@@ -131,15 +140,24 @@ Using this would ensure that the sdk works normally for API level 16 & above, an
 	Possible values for Consent Title option :
 	
 	```java
-    	TrueSdkScope.SDK_CONSENT_TITLE_LOG_IN
-    	TrueSdkScope.SDK_CONSENT_TITLE_SIGN_UP
-    	TrueSdkScope.SDK_CONSENT_TITLE_SIGN_IN
-    	TrueSdkScope.SDK_CONSENT_TITLE_VERIFY
-    	TrueSdkScope.SDK_CONSENT_TITLE_REGISTER
-    	TrueSdkScope.SDK_CONSENT_TITLE_GET_STARTED
+	// To use "Login" as the contextual text in the user profile view title
+	TrueSdkScope.SDK_CONSENT_TITLE_LOG_IN
+	
+	// To use "Signup" as the contextual text in the user profile view title
+	TrueSdkScope.SDK_CONSENT_TITLE_SIGN_UP
+	
+	// To use "Sign in" as the contextual text in the user profile view title
+	TrueSdkScope.SDK_CONSENT_TITLE_SIGN_IN
+	
+	// To use "Verify" as the contextual text in the user profile view title
+	TrueSdkScope.SDK_CONSENT_TITLE_VERIFY
+	
+	// To use "Register" as the contextual text in the user profile view title
+	TrueSdkScope.SDK_CONSENT_TITLE_REGISTER
+	
+	// To use "Get Started" as the contextual text in the user profile view title
+	TrueSdkScope.SDK_CONSENT_TITLE_GET_STARTED
 	```
-
-
 
  8. (Optional) 
     You can set a unique requestID for every profile request with
