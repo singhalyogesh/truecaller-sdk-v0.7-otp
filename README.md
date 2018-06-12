@@ -101,6 +101,7 @@ Using this would ensure that the sdk works normally for API level 16 & above, an
 
     ##### - SDK Options
 	To use the SDK for verification of only Truecaller users or to use it to verify all your users ( including non truecaller users as well )
+	
 	Possible values for SDK Options :
 	
 	```java      
@@ -113,6 +114,7 @@ Using this would ensure that the sdk works normally for API level 16 & above, an
 
     ##### - Consent Mode 
 	To switch between a full screen view or an overlay view of the profile consent
+	
 	Possible values for Consent Mode :
 	
 	```java
@@ -125,6 +127,7 @@ Using this would ensure that the sdk works normally for API level 16 & above, an
 	
     ##### - Footer Type
 	To configure the CTA present at the bottom
+	
 	Possible values for Footer Type :
 	
 	```java
@@ -137,6 +140,7 @@ Using this would ensure that the sdk works normally for API level 16 & above, an
 	
     ##### - Consent Title Options
 	To provide appropriate context of verification to the truecaller user 
+	
 	Possible values for Consent Title option :
 	
 	```java
