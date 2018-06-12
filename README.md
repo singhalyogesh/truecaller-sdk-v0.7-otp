@@ -272,7 +272,7 @@ Using this would ensure that the sdk works normally for API level 16 & above, an
    TrueProfile profile = new TrueProfile.Builder(firstName, lastName).build();
    TrueSDK.getInstance().verifyOtp(profile, otp, apiCallback);
    
-   // 'getInstance' method returns the control to the OtpCallback as defined in the section above
+   // 'verifyOtp' method returns the control to the OtpCallback as defined in the section above
    ```
 
   (Optional)  
