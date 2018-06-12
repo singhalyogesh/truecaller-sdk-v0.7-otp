@@ -87,7 +87,14 @@ Using this would ensure that the sdk works normally for API level 16 & above, an
 7. Initialise the TrueSDK in the onCreate method:
     
      ```java
-     TrueSDK.init(this, sdkCallback);
+     TrueSdkScope trueScope = new TrueSdkScope.Builder(this, sdkCallback)
+                .consentMode(TrueSdkScope.CONSENT_MODE_FULLSCREEN )
+                .sdkOptions( TrueSdkScope.SDK_OPTION_WITH_OTP )
+                .footerType( TrueSdkScope.FOOTER_TYPE_SKIP )
+                .consentTitleOption( TrueSdkScope.SDK_CONSENT_TITLE_VERIFY )
+                .build();
+                
+     TrueSDK.init(trueScope);	
      ```
     
     (Optional) You can set a unique requestID for every profile request with     	`TrueSDK.getInstance().setRequestNonce(customHash);`
