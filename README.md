@@ -98,13 +98,24 @@ Using this would ensure that the sdk works normally for API level 16 & above, an
      ```
     
     TrueSDK v0.7 provides you with capabilities to configure the following settings -
-	 Consent Mode : To switch between a full screen view or an overlay view of the profile consent
-	 SDK Options : To use the SDK for verification of only Truecaller users or to use it to verify all your users ( including non truecaller users as well )
-	 Footer Type : To configure the CTA present at the bottom
-	 Consent Title Options : To provide appropriate context of verification to the truecaller user 
+    
+    #### - Consent Mode 
+	To switch between a full screen view or an overlay view of the profile consent
+
+    #### - SDK Options
+	To use the SDK for verification of only Truecaller users or to use it to verify all your users ( including non truecaller users as well )
+	
+    #### - Footer Type
+	To configure the CTA present at the bottom
+	
+    #### - Consent Title Options
+	To provide appropriate context of verification to the truecaller user 
 
 
-    (Optional) You can set a unique requestID for every profile request with     	`TrueSDK.getInstance().setRequestNonce(customHash);`
+
+    (Optional) 
+    You can set a unique requestID for every profile request with
+    `TrueSDK.getInstance().setRequestNonce(customHash);`
     
     Note : The customHash must be a base64 URL safe string with a minimum character length of 8 and maximum of 64 characters
 
