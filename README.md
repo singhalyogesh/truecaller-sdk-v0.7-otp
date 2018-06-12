@@ -84,19 +84,26 @@ Using this would ensure that the sdk works normally for API level 16 & above, an
     truesdk:truebutton_text="cont"/>
     ```
 
-7. Initialise the TrueSDK in the onCreate method:
+7. Create a TrueSdkScope object by using the appropriate configurational settings and use it to initialize the TrueSDK in your android activity's onCreate method:
     
      ```java
      TrueSdkScope trueScope = new TrueSdkScope.Builder(this, sdkCallback)
-                .consentMode(TrueSdkScope.CONSENT_MODE_FULLSCREEN )
                 .sdkOptions( TrueSdkScope.SDK_OPTION_WITH_OTP )
-                .footerType( TrueSdkScope.FOOTER_TYPE_SKIP )
+		.consentMode(TrueSdkScope.CONSENT_MODE_FULLSCREEN )
                 .consentTitleOption( TrueSdkScope.SDK_CONSENT_TITLE_VERIFY )
+		.footerType( TrueSdkScope.FOOTER_TYPE_SKIP )
                 .build();
                 
      TrueSDK.init(trueScope);	
      ```
     
+    TrueSDK v0.7 provides you with capabilities to configure the following settings -
+	 Consent Mode : To switch between a full screen view or an overlay view of the profile consent
+	 SDK Options : To use the SDK for verification of only Truecaller users or to use it to verify all your users ( including non truecaller users as well )
+	 Footer Type : To configure the CTA present at the bottom
+	 Consent Title Options : To provide appropriate context of verification to the truecaller user 
+
+
     (Optional) You can set a unique requestID for every profile request with     	`TrueSDK.getInstance().setRequestNonce(customHash);`
     
     Note : The customHash must be a base64 URL safe string with a minimum character length of 8 and maximum of 64 characters
