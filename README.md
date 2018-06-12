@@ -88,50 +88,78 @@ Using this would ensure that the sdk works normally for API level 16 & above, an
     
      ```java
      TrueSdkScope trueScope = new TrueSdkScope.Builder(this, sdkCallback)
-                .sdkOptions( TrueSdkScope.SDK_OPTION_WITH_OTP )
+		.sdkOptions( TrueSdkScope.SDK_OPTION_WITH_OTP )
 		.consentMode(TrueSdkScope.CONSENT_MODE_FULLSCREEN )
-                .consentTitleOption( TrueSdkScope.SDK_CONSENT_TITLE_VERIFY )
+		.consentTitleOption( TrueSdkScope.SDK_CONSENT_TITLE_VERIFY )
 		.footerType( TrueSdkScope.FOOTER_TYPE_SKIP )
-                .build();
+		.build();
                 
      TrueSDK.init(trueScope);	
      ```
     
     TrueSDK v0.7 provides you with capabilities to configure the following settings -
     
-    #### - Consent Mode 
+    ##### - Consent Mode 
 	To switch between a full screen view or an overlay view of the profile consent
+	Possible values for Consent Mode :
+	
+	```java
+	TrueSdkScope.SDK_OPTION_WITHOUT_OTP
+	TrueSdkScope.SDK_OPTION_WITH_OTP
+	```
 
-    #### - SDK Options
+    ##### - SDK Options
 	To use the SDK for verification of only Truecaller users or to use it to verify all your users ( including non truecaller users as well )
+	Possible values for SDK Options :
 	
-    #### - Footer Type
+	```java
+	TrueSdkScope.SDK_OPTION_WITHOUT_OTP
+	TrueSdkScope.SDK_OPTION_WITH_OTP
+	```
+	
+    ##### - Footer Type
 	To configure the CTA present at the bottom
+	Possible values for Footer Type :
 	
-    #### - Consent Title Options
+	```java
+	TrueSdkScope.FOOTER_TYPE_CONTINUE
+	TrueSdkScope.FOOTER_TYPE_SKIP
+	```
+	
+    ##### - Consent Title Options
 	To provide appropriate context of verification to the truecaller user 
+	Possible values for Consent Title option :
+	
+	```java
+    	TrueSdkScope.SDK_CONSENT_TITLE_LOG_IN
+    	TrueSdkScope.SDK_CONSENT_TITLE_SIGN_UP
+    	TrueSdkScope.SDK_CONSENT_TITLE_SIGN_IN
+    	TrueSdkScope.SDK_CONSENT_TITLE_VERIFY
+    	TrueSdkScope.SDK_CONSENT_TITLE_REGISTER
+    	TrueSdkScope.SDK_CONSENT_TITLE_GET_STARTED
+	```
 
 
 
-    (Optional) 
+ 8. (Optional) 
     You can set a unique requestID for every profile request with
     `TrueSDK.getInstance().setRequestNonce(customHash);`
     
     Note : The customHash must be a base64 URL safe string with a minimum character length of 8 and maximum of 64 characters
 
- 8. Initialise the TrueButton in the onCreate method:
+ 9. Initialise the TrueButton in the onCreate method:
 
       ```java
       TrueButton trueButton = findViewById(R.id.com_truecaller_android_sdk_truebutton);
       ```
     
- 9. Add the following condition in the onActivityResult method:
+ 10. Add the following condition in the onActivityResult method:
 
       ```java
       TrueSDK.getInstance().onActivityResultObtained( this,resultCode, data);
       ```
       
- 10. In your selected Activity
+ 11. In your selected Activity
 
    - Either make the Activity implement ITrueCallback or create an instance. 
 	This interface has 3 methods: onSuccesProfileShared(TrueProfile), onFailureProfileShared(TrueError) and onOtpRequired()
